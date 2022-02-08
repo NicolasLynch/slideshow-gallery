@@ -1,38 +1,595 @@
-.App {
-  text-align: center;
+*{
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+
+/* Estilo de movil: */
+a{
+	text-decoration: none;
+	color: inherit;
+	cursor: default;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+	margin: 0;
+	font-family: 'Libre Baskerville', serif;
+	color: #7d7d7d;
+	background-color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App{
+	padding: 1.5em;
 }
 
-.App-link {
-  color: #61dafb;
+.header{
+	margin-bottom: 1.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-header{
+	display: flex;
+	align-items: center;	
+	justify-content: space-between;
+	margin-bottom: 1.1em;
+}
+
+.title{
+	width: 7.1em;
+	cursor: pointer;
+}
+
+.slideshow{
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.bar{
+	position: relative;
+	left: -1.5em;							/* Esta barra tiene el mismo tamaño que el ancho de la pantalla, pero por el padding de su caja padre esta desplazado 1.5em a la derecha. Para que entre perfecto voy a dezplazarlo la misma distancia a la izquierda */
+	height: 1px;
+	width: 100vw;
+	background-color: #e5e5e5;
+}
+
+
+
+
+
+/* GalleryPainting */
+.gallery-painting{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	margin-bottom: 1.4em;
+	cursor: pointer;	
+}
+
+.animation:hover{							/* Pone estas propiedades cuando paso el mouse por arriba */
+	opacity: 0.7;
+	transition: 0.3s;						/* Todas estas propiedades se activan se formna gradual, llegando al 100% a los 0.3 seg */ 
+}
+
+.filter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(to bottom, rgba(0, 0, 255,0) 50%, rgba(0, 0, 0, 0.85) );
+}
+
+.image-gallery-painting{
+	display: block;
+	width: 100%;
+}
+
+.info-gallery-painting{
+	position: absolute;
+	bottom: 0.12em;
+	display: block;
+	width: 100%;
+	padding: 0em 19.5% 0em 9.8%; 
+	color: white;
+}
+
+.name-gallery-painting{
+	width: 100%;
+	margin: 0;
+	margin-bottom: 3.7%;
+	font-size: 6.49vw;
+}
+
+.artist-name-gallery-painting{
+	margin: 0;
+	margin-bottom: 11.4%;
+	font-size: 3.5vw;
+}
+
+
+
+
+/* _____PaintingPage_____ */
+
+.painting-container{
+	position: relative;
+	width: 100%;
+}
+
+.modal-open-button{
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	display: flex;
+	align-items: center;	
+	justify-content: space-between;
+	height: 2.5em;
+	width: 9em;
+	padding: 0 1em;
+	color: white;
+	background-color: black;
+	opacity: 0.75;
+	cursor: pointer;
+}
+
+.view-icon{
+	width: 0.8em;
+}
+
+.view-text{
+	position: relative;
+	top: 1px;
+	font-size: 0.6rem;
+	letter-spacing: 2px;
+}
+
+.image-page{
+	width: 100%;
+}
+
+.top-container{
+	position: relative;
+	top: -3.4em;
+	left: 0;
+	width: 17.5em;
+	padding-top: 1.5em;
+	padding-left: 1.6em;
+	margin-bottom: -3.5em;
+	background-color: white;
+}
+
+.top-name-painting-page{
+	margin: 0;
+	margin-bottom: 0.3em;
+	font-weight: 700;
+	font-size: 1.52rem;
+	color: #000;
+}
+
+.top-artist-name-painting-page{
+	margin: 0;
+	margin-bottom: 1.8em;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.artist-image{
+	display: block;
+	width: 4em;
+	margin-left: 1em;
+	margin-bottom: 2em;
+}
+
+.top-info-painting-page{
+	margin-bottom: 4em;
+}
+
+.year{
+	margin: 0;
+	margin-bottom: 0.26em;
+	text-align: end;
+	font-size: 6.6rem;
+	line-height: 0;
+	color: #f3f3f3;
+}
+
+.info{
+	margin-bottom: 2em;
+	font-size: 0.91rem;
+	font-weight: 700;
+	line-height: 1.7em;
+}
+
+.source{
+	font-size: 0.65rem;
+	font-weight: 700;
+	text-decoration: underline 2PX;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+
+
+.progress-bar{
+	position: relative;
+	left: -1.5em;									/* Esta barra tiene el mismo tamaño que el ancho de la pantalla, pero por el padding de su caja padre esta desplazado 1.5em a la derecha. Para que entre perfecto voy a dezplazarlo la misma distancia a la izquierda */
+	height: 3px;
+	width: 100vw;
+	background-color: #e5e5e5;
+}
+
+.progress{
+	height: 100%;
+	background-color: #7d7d7d;
+}
+
+.bottom-container{
+	display: flex;
+	align-items: center;	
+	justify-content: space-between;
+	margin-bottom: -5em;
+}
+
+.bottom-info-painting-page{
+	max-width: 12em;
+}
+
+.bottom-name-painting-page{
+	margin-bottom: -0.3em;
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: -0.5px;
+	color: #000;
+}
+
+.bottom-artist-name-painting-page{
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: -0.6px;
+}
+
+.button{
+	margin-left: 1em;
+	transform: scale(0.7);					/* No estoy usando una stiqueta <img> sino una etiqueta <svg>. En este ultimo caso no se puede cambiar las propiedades del svg a no ser que lo haga desde el HTML, por ende no puedo usar la propiedad width:"". Una altenativa que si funciona epara cambiar su tamaño de forma proporcional es usar la propiedad "transform: scale()"  */
+}
+
+.activated{
+	cursor: pointer;
+}
+
+.modal{
+	position: fixed;	
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100vw;
+	padding: 0 1.5em;
+	padding-top: 8em;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.9);
+	opacity: 0;									/* Con esto, hago invisible a este elemento, como si no existiera. Esto lo cambio con una segunda clase */
+	pointer-events: none;						/* Esto sirve para que no pueda hacer click no seleccionar nada, es como si no existiera. Esto lo cambio con una segunda clase */
+}
+
+
+.modal-close-button{
+	margin-bottom: 2em;
+	text-align: end;
+	font-size: 0.95rem;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+
+.modal-image{
+	width: 100%;
+	transform: scale(0);						/* La imagen por defecto no se va a ver y ademas vaa ser tan pequeña que no va a existir. Esto esta hecho a drede porque vamos usar clases para activar el modal. En esa sefunda clase transform: scale(1); para que haga una animación en donde la imagen va creciendo desde el centro */
+}
+
+.activate-modal{
+	opacity: 1;
+	pointer-events: initial;
+	transition: 0.3s;
+}
+
+.activate-modal-image{
+	transform: scale(1);						/* Esto trabaja en conjunto con la clase ".modal-image" */
+	transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo de Tablet: */
+@media screen and (min-width: 480px) {				
+	
+	.App{													
+		padding: 1.7em 2.5em;		
+	}
+	
+	.header{												
+		margin-bottom: 2.5em;
+	}
+	
+	
+	.slideshow{
+		font-size: 0.9rem;									
+	}
+	
+	.bar{
+		left: -2.5em;									
+	}
+	
+	
+	
+	
+	
+	/* GalleryPainting */
+
+	.grid{												
+		display: grid;		
+		column-gap: 6.2%;							
+		grid-template-columns: repeat(2, minmax(min-content, 1fr));
+	}
+
+	.gallery-painting{
+		margin-bottom: 10.87%;										
+	}
+		
+	.name-gallery-painting{
+		margin-bottom: 3.9%;							
+		font-size: 3.05vw;								
+	}
+	
+	.artist-name-gallery-painting{
+		margin-bottom: 11.3%;						
+		font-size: 1.65vw;								
+	}
+		
+	.painting-page-header{								
+		position: relative;
+		padding-top: 2px;
+		overflow: hidden;
+	}
+
+	.painting-container{
+		width: 59.9vw;									
+		margin-bottom: 8.1em;								
+	}
+	
+	.top-info{											
+		position: absolute;
+		top: -0.1em;
+		left: 34.5%;
+		width: 100%;
+	}
+
+	.top-container{											
+		display: block;									
+		position: static;								
+		top: -0.1em;								
+		left: 34.5%;								
+		height: 42.1%;							
+		width: 60%;							
+		padding-top: 0em;						
+		padding-left: 8.5%;						
+		margin-bottom: -3.5em;	
+	}
+	
+	.top-name-painting-page{
+		height: 61.5%;							
+		font-size: 7.28vw;									
+	}
+	
+	.top-artist-name-painting-page{
+		margin-bottom: 3.9em;				
+		padding-bottom: 18%;					
+	}
+	
+	.artist-image{
+		position: static;						
+		display: initial;				
+		top: 41.9%;								
+		left: 69.3%;								
+		width: 17.5%;										
+		margin-left: 37%;						
+	}
+	
+	.year{
+		margin-bottom: -0.07em;						
+		text-align: start;							
+		font-size: 11.5rem;							
+	}
+	
+	.top-info-painting-page{
+		margin: 0 6.72em;							
+		margin-bottom: 3em;							
+	}
+	
+	.progress-bar{
+		left: -2.5em;									
+	}
+	
+	.bottom-container{								
+		height: 7em;
+	}
+	
+	.bottom-name-painting-page{
+		max-width: 15em;
+		width: 15em;
+		margin-bottom: -0.4em;					
+		font-size: 1.5rem;						
+	}
+	
+	.bottom-artist-name-painting-page{
+		font-size: 1.1rem;					
+	}
+	
+	.buttons{								
+		margin-right: 0.3em;	
+	}
+
+	.button{									
+		margin-left: 3em;
+		transform: scale(1.2);					/* No estoy usando una stiqueta <img> sino una etiqueta <svg>. En este ultimo caso no se puede cambiar las propiedades del svg a no ser que lo haga desde el HTML, por ende no puedo usar la propiedad width:"". Una altenativa que si funciona epara cambiar su tamaño de forma proporcional es usar la propiedad "transform: scale()"  */
+	}
+	
+
+	
+	.modal{
+		padding-top: 1em;							
+	}
+	
+	.modal-container{								
+		width: 85%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+
+
+
+/* Estilo de desktop */
+@media screen and (min-width: 800px) {
+	
+	.bar{
+		left: 0;									
+		width: 100%;							
+	}
+	
+		
+	/* GalleryPainting */
+
+	.grid{																			
+		display: grid;													
+		column-gap: 2.9%;														
+		grid-template-columns: repeat(4, minmax(min-content, 1fr));		
+	}
+
+	.gallery-painting{
+		margin-bottom: 11.4%;						
+	}
+	
+	.info-gallery-painting{
+		padding-left: 12%;								
+		padding-right: 12%;									
+	}
+	
+	.name-gallery-painting{
+		font-size: 1.7vw;								
+		margin-bottom: 3%;									
+	}
+	
+	.artist-name-gallery-painting{
+		margin-bottom: 12%;								
+		font-size: 0.9vw;								
+	}
+	
+	
+	
+	
+	/* _____PaintingPage_____ */
+	.painting-page{											
+		margin-top: 5em;
+	}
+	
+	.flex-container{									
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.painting-page-header{								
+		position: relative;										
+		display: inline-block;								
+		overflow: visible;										
+	}
+
+	.painting-container{
+		width: 22.5vw;										
+	}
+	
+	
+	.top-info{
+		left: 86%;							
+	}
+
+	.top-container{
+		width: 85%;															
+		padding-left: 15%;						
+	}
+	
+	.top-name-painting-page{
+		margin-bottom: 7.2%;											
+		font-size: 2.5vw;					
+	}
+	
+	.artist-image{
+		position: absolute;																			
+		top: 23.7vw;								
+		left: 0;										
+		width: 26%;										
+		margin-left: 20.5%;													
+	}
+	
+	.medium-container{						
+		display: inline-block;
+		margin-top: 5.8em;
+	}
+
+	.year{
+		margin-bottom: 0em;											
+		font-size: 13.2rem;								
+	}
+	
+	.top-info-painting-page{						
+		margin: 0;														
+		width: 25.8em;							
+	}
+
+	.progress-bar{
+		left: -2.5em;							
+		height: 2px;								
+	}
+	
+	.bottom-container{
+		height: 4.8em;							
+	}
+	
+
+	
+	.bottom-name-painting-page{			
+		font-size: 1.36rem;										
+		width: 25em;							
+	}
+	
+	.bottom-artist-name-painting-page{		
+		font-size: 1rem;						
+	}
+	
+	.button{								
+		margin-top: 0.5em;						
+		transform: scale(0.95);
+	}
+	
+	.modal-container{							
+		width: 32%;								
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
