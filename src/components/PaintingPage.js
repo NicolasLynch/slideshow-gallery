@@ -115,10 +115,10 @@ function PaintingPage(props) {
 					<p className='bottom-artist-name-painting-page'>{props.painting.artistName}</p>
 				</div>
 				<div className='buttons'>
-					<Link to={`/galeriaperrito/${back()}`}>
+					<Link to={`/galeria-version-final/${back()}`}>
 						<svg alt='Back button' className={`button ${backButton[0]}`} width="26" height="24" xmlns="http://www.w3.org/2000/svg"><g stroke={backButton[1]} fill="none" fillRule="evenodd"><path d="M24.166 1.843L3.627 12.113l20.539 10.269V1.843z" strokeWidth="3"/><path fill="#D8D8D8" d="M.986.5h-1v22.775h1z"/></g></svg>
 					</Link>
-					<Link to={`/galeriaperrito/${next()}`}>
+					<Link to={`/galeria-version-final/${next()}`}>
 						<svg alt='Back button' className={`button ${nextButton[0]}`} width="26" height="24" xmlns="http://www.w3.org/2000/svg"><g stroke={nextButton[1]} fill="none" fillRule="evenodd"><path d="M1.528 1.843l20.538 10.27L1.528 22.382V1.843z" strokeWidth="3"/><path fill="#D8D8D8" d="M24.708.5h1v22.775h-1z"/></g></svg>
 					</Link>
 				</div>
