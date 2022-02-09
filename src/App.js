@@ -203,15 +203,15 @@ function App() {
 			<Router>
 				<header className='header'>
 					<div className='top-header'>
-						<Link to="/galeria-version-final/">
+						<Link to="/slideshow-gallery/">
 							<img src='./assets/shared/logo.svg' alt='title' className='title'></img>
 						</Link>
-						<Link to={`/galeria-version-final/${subdirectory(paintings[0].name)}`} className='slideshow'>START SLIDESHOW</Link>			{/* Este boton me redirige al link de la primera imagen */}
+						<Link to={`/slideshow-gallery/${subdirectory(paintings[0].name)}`} className='slideshow'>START SLIDESHOW</Link>			{/* Este boton me redirige al link de la primera imagen */}
 					</div>
 					<div className='bar'></div>
 				</header>
 				<main>
-					<Route exact path="/galeria-version-final/" render={() => {									
+					<Route exact path="/slideshow-gallery/" render={() => {									
 						return(
 							<div className='gallery'>							
 								{renderDispositive()}
@@ -219,7 +219,7 @@ function App() {
 						)}}>										
 					</Route>
 					{paintings.map(painting => 
-						<Route path={`/galeria-version-final/${subdirectory(painting.name)}`} key={painting.name}  render={() => {						// Este key es pára que no me tire errores 						
+						<Route path={`/slideshow-gallery/${subdirectory(painting.name)}`} key={painting.name}  render={() => {						// Este key es pára que no me tire errores 						
 							return (
 								<div>
 									<PaintingPage paintings={paintings} painting={painting} subdirectory={subdirectory}/>
