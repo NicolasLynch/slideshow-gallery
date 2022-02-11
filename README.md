@@ -11,7 +11,7 @@ Page that shows the works of art of a gallery and its respective information.
 
 ## Install dependencies:
 
-- Remember to have React installed
+- Remember to have React installed.
 
 - react-router-dom@5.3.0  
 (It is necessary that this version be used. Because updates from version 6.0.0 onwards generate incompatibility)
